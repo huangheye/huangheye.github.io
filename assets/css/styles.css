@@ -1091,6 +1091,13 @@ button {
   letter-spacing: 0.04em;
 }
 
+.people-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .people-card-placeholder .people-photo {
   background: linear-gradient(180deg, #f7f7f7 0%, #efefef 100%);
   color: #8a8a8a;
