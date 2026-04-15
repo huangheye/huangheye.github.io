@@ -1066,6 +1066,25 @@ button {
   gap: 18px;
 }
 
+.group-lab-intro {
+  padding-bottom: 10px;
+}
+
+.group-lab-kicker {
+  margin: 0 0 6px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8e8e8e;
+}
+
+.group-lab-name {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
 .people-card {
   border: 1px solid #e3e3e3;
   border-radius: 12px;
