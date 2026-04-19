@@ -2,13 +2,8 @@ const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
 const panels = Array.from(document.querySelectorAll('[data-panel]'));
 const validTabs = new Set(tabs.map((tab) => tab.dataset.tab));
 const panelVideos = Array.from(document.querySelectorAll('[data-panel] video'));
-const pubViewPanel = document.querySelector('#panel-publications');
-const pubViewRadios = Array.from(document.querySelectorAll('input[name="pub-view"]'));
-const pubViewToggles = Array.from(document.querySelectorAll('.pub-view-toggle[data-pub-view]'));
 const publicationItems = Array.from(
-  document.querySelectorAll(
-    '#panel-publications .pub-list .pub-entry, #panel-publications [data-pub-view-section="all"] .pub-compact-item'
-  )
+  document.querySelectorAll('#panel-publications .pub-list .pub-entry')
 );
 const placeholderLinks = Array.from(document.querySelectorAll('[data-placeholder-link]'));
 const prospectiveForm = document.querySelector('#prospective-form');
@@ -112,15 +107,24 @@ function renderPublicationLinks() {
       return;
     }
 
-    const links = document.createElement('div');
-    links.className = 'pub-action-links';
-    const linkTypes = ['paper'];
+    const linkTypes = ['paper', 'project', 'code'].filter((type) => {
+      if (type === 'paper') {
+        return item.dataset.paperUrl?.trim();
+      }
 
-    if (item.dataset.projectUrl?.trim()) {
-      linkTypes.push('project');
+      if (type === 'project') {
+        return item.dataset.projectUrl?.trim();
+      }
+
+      return item.dataset.codeUrl?.trim();
+    });
+
+    if (!linkTypes.length) {
+      return;
     }
 
-    linkTypes.push('code');
+    const links = document.createElement('div');
+    links.className = 'pub-action-links';
     links.append(...linkTypes.map((type) => createPublicationActionLink(item, type)));
     linkHost.append(links);
   });
@@ -225,21 +229,6 @@ async function submitProspectiveForm(event) {
   }
 }
 
-function syncPublicationView() {
-  if (!pubViewPanel || !pubViewRadios.length) {
-    return;
-  }
-
-  const checkedRadio = pubViewRadios.find((radio) => radio.checked);
-  const activeView = checkedRadio?.id === 'pub-view-all' ? 'all' : 'selected';
-  pubViewPanel.dataset.pubView = activeView;
-
-  pubViewToggles.forEach((toggle) => {
-    const isActive = toggle.dataset.pubView === activeView;
-    toggle.setAttribute('aria-pressed', String(isActive));
-  });
-}
-
 function getVideoStart(video) {
   const value = Number.parseFloat(video.dataset.start || '0');
   return Number.isFinite(value) && value > 0 ? value : 0;
@@ -334,24 +323,6 @@ panelVideos.forEach((video) => {
         playPromise.catch(() => {});
       }
     }
-  });
-});
-
-pubViewRadios.forEach((radio) => {
-  radio.addEventListener('change', syncPublicationView);
-});
-
-pubViewToggles.forEach((toggle) => {
-  toggle.addEventListener('click', () => {
-    const targetId = toggle.getAttribute('for');
-    const targetRadio = targetId ? document.getElementById(targetId) : null;
-
-    if (!(targetRadio instanceof HTMLInputElement)) {
-      return;
-    }
-
-    targetRadio.checked = true;
-    syncPublicationView();
   });
 });
 

@@ -964,11 +964,8 @@
         role="tabpanel"
         aria-labelledby="tab-publications"
         data-panel="publications"
-        data-pub-view="selected"
         hidden
       >
-        <input class="pub-view-state" type="radio" name="pub-view" id="pub-view-selected" checked />
-        <input class="pub-view-state" type="radio" name="pub-view" id="pub-view-all" />
         <section class="content-section pub-section-block">
           <div class="pub-section-head">
             <div class="pub-section-head-top">
@@ -981,12 +978,6 @@
                   rel="noreferrer"
                   >Google Scholar</a
                 >
-                <label class="pub-view-toggle pub-view-item" data-pub-view="selected" for="pub-view-selected">
-                  Show Selected
-                </label>
-                <label class="pub-view-toggle pub-view-item" data-pub-view="all" for="pub-view-all">
-                  Show All
-                </label>
               </div>
             </div>
             <p class="pub-section-note">(* corresponding author, # equal contributions)</p>
@@ -1225,6 +1216,7 @@
             <article
               class="pub-entry pub-entry-media"
               data-paper-url="https://arxiv.org/pdf/2412.20680"
+              data-code-url="https://github.com/CATS-Lab/AV-Control-PERL_Platooning"
             >
               <div class="pub-entry-body">
                 <p class="pub-entry-title">Online Adaptive Platoon Control for Connected and Automated Vehicles via Physics Enhanced Residual Learning</p>
@@ -1480,99 +1472,6 @@
                 </figure>
               </div>
             </article>
-          </div>
-        </section>
-
-        <section class="content-section pub-section-block" data-pub-view-section="all">
-          <div class="pub-section-head">
-            <h2 class="pub-section-title">Additional Publications</h2>
-          </div>
-          <div class="pub-compact-list">
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">SACA: A Scenario-Aware Collision Avoidance Framework for Autonomous Vehicles Integrating LLMs-Driven Reasoning</p>
-                <p class="pub-compact-authors">S. Zhao, J. Zhang, N. Masoud, <span class="author-self">H. Huang</span>, X. Xia, C. He</p>
-                <p class="pub-compact-meta">preprint · 2025</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Multi-Vehicles and Traffic Signal Coordination: A Parallel Computing Approach in Spatial Domain</p>
-                <p class="pub-compact-authors">J. Zhu, H. Wang, X. Yang, J. Hu, C. Tan, <span class="author-self">H. Huang</span></p>
-                <p class="pub-compact-meta">preprint · 2024</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">InVDriver: Intra-Instance Aware Vectorized Query-Based Autonomous Driving Transformer</p>
-                <p class="pub-compact-authors">B. Zhang, <span class="author-self">H. Huang</span>, C. Liu, Y. Zhang, Z. Xu</p>
-                <p class="pub-compact-meta">Journal of Intelligent Connected Vehicles · 2025 · IF 7.8</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Joint Optimization of Multi-Vehicles and Traffic Signal: A Parallel Approach in Spatial Domain</p>
-                <p class="pub-compact-authors">J. Zhu, H. Wang, <span class="author-self">H. Huang</span>, X. Yang, C. Tan, J. Hu</p>
-                <p class="pub-compact-meta">IEEE Internet of Things Journal · 2025 · Q1 · IF 8.9</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Drift Cornering Control and Real-Vehicle Deployment for Electric Vehicles</p>
-                <p class="pub-compact-authors">S. Zhao, J. Zhang, N. Masoud, Y. Jiang, <span class="author-self">H. Huang</span>, T. Liu</p>
-                <p class="pub-compact-meta">IEEE Transactions on Industrial Electronics · 2025 · Q1 · IF 7.2</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">AI-Enabled Digital Twin Framework for Safe and Sustainable Intelligent Transportation</p>
-                <p class="pub-compact-authors">K. Long, C. Ma, H. Li, Z. Li, <span class="author-self">H. Huang</span>, H. Shi, Z. Huang, Z. Sheng, L. Shi, P. Li</p>
-                <p class="pub-compact-meta">Sustainability · 2025</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Emergency Index (EI): A Two-Dimensional Surrogate Safety Measure Considering Vehicles’ Interaction Depth</p>
-                <p class="pub-compact-authors">H. Cheng, Y. Jiang, H. Zhang, K. Chen, <span class="author-self">H. Huang</span>, S. Xu, J. Wang, S. Zheng</p>
-                <p class="pub-compact-meta">Transportation Research Part C: Emerging Technologies · 2025 · Q1 · IF 7.9</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Safer Conflict-Based Search: Risk-Constrained Optimal Pathfinding for Multiple Connected and Automated Vehicles</p>
-                <p class="pub-compact-authors">Y. Liu, <span class="author-self">H. Huang</span>, Q. Xu, S. Xu, J. Wang</p>
-                <p class="pub-compact-meta">IEEE Transactions on Automation Science and Engineering · 2024 · Q1 · IF 6.4</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Autonomous Vehicle Extreme Control for Emergency Collision Avoidance via Reachability-Guided Reinforcement Learning</p>
-                <p class="pub-compact-authors">S. Zhao, J. Zhang, C. He, <span class="author-self">H. Huang</span></p>
-                <p class="pub-compact-meta">Advanced Engineering Informatics · 2024 · Q1 · IF 9.9</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">A Harmonized Approach: Beyond-the-Limit Control for Autonomous Vehicles Balancing Performance and Safety in Unpredictable Environments</p>
-                <p class="pub-compact-authors">S. Zhao, J. Zhang, X. He, C. He, H. Hou, <span class="author-self">H. Huang</span>, J. Han</p>
-                <p class="pub-compact-meta">IEEE Transactions on Intelligent Transportation Systems · 2024 · Q1 · IF 8.4</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Novel Quantitative Approach for Assessing Driving Risks and Simulation Study of Its Prevention and Control Strategies</p>
-                <p class="pub-compact-authors">X. Zheng, X. Jiang, <span class="author-self">H. Huang</span>, Y. Wang, Q. Xu, Q. Zhang</p>
-                <p class="pub-compact-meta">Journal of Mechanical Engineering · 2024 · Q1 · IF 4.5</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">On-Road Trajectory Planning of Connected and Automated Vehicles in Complex Traffic Settings: A Hierarchical Framework of Trajectory Refinement</p>
-                <p class="pub-compact-authors">F. Zhao, L. Han, M. Cui, <span class="author-self">H. Huang</span>, S. Zhong, F. Su, L. Wang</p>
-                <p class="pub-compact-meta">IEEE Access · 2024</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">A New Vehicle-to-Vehicle Communication System: Visual-Enhanced Cooperative Traffic Operations</p>
-                <p class="pub-compact-authors">K. Ma, <span class="author-self">H. Huang*</span>, H. Li, P. Zhang, Z. Liang, X. Li*</p>
-                <p class="pub-compact-meta">104rd TRB · 2025</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Understanding Driver Risk Cognition and Proactive Decision-Making Behaviors in High-Risk Scenarios</p>
-                <p class="pub-compact-authors">Z. Li, <span class="author-self">H. Huang*</span>, H. Cheng, J. Jiang, X. Li, A. Zgonnikov</p>
-                <p class="pub-compact-meta">104rd Transportation Research Board Annual Meeting (TRB) · 2025</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Online Adaptive Platoon Control for Connected and Automated Vehicles via Physical Enhanced Residual Learning</p>
-                <p class="pub-compact-authors">P. Zhang, H. Zhou, <span class="author-self">H. Huang*</span>, H. Shi, K. Long, X. Li</p>
-                <p class="pub-compact-meta">104rd TRB · 2025</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">Centralized Searching and Decentralized Optimization for Efficient Multi-Vehicle Trajectory Planning</p>
-                <p class="pub-compact-authors">Y. Yang, S. Xu, X. Yan, J. Jiang, J. Wang, <span class="author-self">H. Huang*</span></p>
-                <p class="pub-compact-meta">IEEE International Conference on Robotics and Automation (ICRA) · 2025</p>
-              </article>
-              <article class="pub-compact-item">
-                <p class="pub-compact-title">DTP-M3Net: Monocular Multiclass Multistage Vulnerable Road User Detection, Tracking and Prediction for Autonomous Driving</p>
-                <p class="pub-compact-authors">H. Xiong, F. Zhang, X. Fang, <span class="author-self">H. Huang</span>, Q. Yuan, Q. Pan, D. Zhang</p>
-                <p class="pub-compact-meta">IEEE Intelligent Transportation Systems Conference (ITSC) · 2024</p>
-              </article>
           </div>
         </section>
 
