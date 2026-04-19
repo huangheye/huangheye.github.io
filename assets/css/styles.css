@@ -774,6 +774,13 @@ button {
   font-weight: 700;
 }
 
+.pub-entry-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
 .pub-media {
   margin: 12px 0 0;
   max-width: 560px;
@@ -874,6 +881,11 @@ button {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 7px;
+}
+
+.pub-entry-note .pub-action-links {
+  display: inline-flex;
+  margin-top: 0;
 }
 
 .pub-action-link {

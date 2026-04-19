@@ -126,6 +126,14 @@ function renderPublicationLinks() {
     const links = document.createElement('div');
     links.className = 'pub-action-links';
     links.append(...linkTypes.map((type) => createPublicationActionLink(item, type)));
+
+    const note = linkHost.querySelector('.pub-entry-note');
+
+    if (note) {
+      note.append(links);
+      return;
+    }
+
     linkHost.append(links);
   });
 }
