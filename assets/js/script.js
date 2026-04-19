@@ -5,6 +5,11 @@ const panelVideos = Array.from(document.querySelectorAll('[data-panel] video'));
 const pubViewPanel = document.querySelector('#panel-publications');
 const pubViewRadios = Array.from(document.querySelectorAll('input[name="pub-view"]'));
 const pubViewToggles = Array.from(document.querySelectorAll('.pub-view-toggle[data-pub-view]'));
+const publicationItems = Array.from(
+  document.querySelectorAll(
+    '#panel-publications .pub-list .pub-entry, #panel-publications [data-pub-view-section="all"] .pub-compact-item'
+  )
+);
 const placeholderLinks = Array.from(document.querySelectorAll('[data-placeholder-link]'));
 const prospectiveForm = document.querySelector('#prospective-form');
 const prospectiveFormStatus = document.querySelector('#prospective-form-status');
@@ -52,6 +57,73 @@ function setProspectiveFormStatus(message, state = '') {
 
   prospectiveFormStatus.textContent = message;
   prospectiveFormStatus.dataset.state = state;
+}
+
+function createPublicationActionLink(item, type) {
+  const config = {
+    paper: {
+      url: item.dataset.paperUrl?.trim(),
+      label: 'Paper',
+      icon: 'icon-paper',
+    },
+    project: {
+      url: item.dataset.projectUrl?.trim(),
+      label: 'Project',
+      icon: 'icon-homepage',
+    },
+    code: {
+      url: item.dataset.codeUrl?.trim(),
+      label: 'Code',
+      icon: 'icon-code',
+    },
+  }[type];
+  const url = config?.url || '';
+  const label = config?.label || type;
+  const icon = config?.icon || 'icon-paper';
+  const element = url ? document.createElement('a') : document.createElement('span');
+
+  element.className = 'pub-action-link';
+
+  if (url) {
+    element.href = url;
+    element.target = '_blank';
+    element.rel = 'noreferrer';
+    element.setAttribute('aria-label', `${label} link`);
+  } else {
+    element.classList.add('is-placeholder');
+    element.setAttribute('aria-label', `${label} link placeholder`);
+  }
+
+  element.innerHTML = `
+    <svg class="pub-action-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <use href="#${icon}"></use>
+    </svg>
+    <span>${label}</span>
+  `;
+
+  return element;
+}
+
+function renderPublicationLinks() {
+  publicationItems.forEach((item) => {
+    const linkHost = item.querySelector('.pub-entry-body') || item;
+
+    if (linkHost.querySelector('.pub-action-links')) {
+      return;
+    }
+
+    const links = document.createElement('div');
+    links.className = 'pub-action-links';
+    const linkTypes = ['paper'];
+
+    if (item.dataset.projectUrl?.trim()) {
+      linkTypes.push('project');
+    }
+
+    linkTypes.push('code');
+    links.append(...linkTypes.map((type) => createPublicationActionLink(item, type)));
+    linkHost.append(links);
+  });
 }
 
 async function submitProspectiveForm(event) {
@@ -288,6 +360,8 @@ placeholderLinks.forEach((link) => {
     event.preventDefault();
   });
 });
+
+renderPublicationLinks();
 
 if (prospectiveForm) {
   prospectiveForm.addEventListener('submit', submitProspectiveForm);

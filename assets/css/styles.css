@@ -894,15 +894,16 @@ button {
 
 .pub-entry-media .pub-entry-body {
   display: grid;
-  grid-template-columns: 170px minmax(0, 1fr);
-  column-gap: 22px;
+  grid-template-columns: 255px minmax(0, 1fr);
+  column-gap: 26px;
   align-items: start;
 }
 
 .pub-entry-media .pub-entry-title,
 .pub-entry-media .pub-entry-authors,
 .pub-entry-media .pub-entry-meta,
-.pub-entry-media .pub-entry-note {
+.pub-entry-media .pub-entry-note,
+.pub-entry-media .pub-action-links {
   grid-column: 2;
 }
 
@@ -910,22 +911,23 @@ button {
   grid-column: 1;
   grid-row: 1 / span 4;
   margin: 2px 0 0;
-  width: 170px;
+  width: 255px;
   aspect-ratio: 16 / 10;
   max-width: none;
 }
 
 .pub-compact-item-media {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  column-gap: 18px;
+  grid-template-columns: 225px minmax(0, 1fr);
+  column-gap: 22px;
   align-items: start;
 }
 
 .pub-compact-item-media .pub-compact-title,
 .pub-compact-item-media .pub-compact-authors,
 .pub-compact-item-media .pub-compact-meta,
-.pub-compact-item-media .pub-compact-note {
+.pub-compact-item-media .pub-compact-note,
+.pub-compact-item-media .pub-action-links {
   grid-column: 2;
 }
 
@@ -933,9 +935,49 @@ button {
   grid-column: 1;
   grid-row: 1 / span 4;
   margin: 2px 0 0;
-  width: 150px;
+  width: 225px;
   aspect-ratio: 16 / 10;
   max-width: none;
+}
+
+.pub-action-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 7px;
+}
+
+.pub-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 24px;
+  padding: 2px 8px;
+  border: 1px solid #dedede;
+  border-radius: 999px;
+  color: #555555;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  background: #ffffff;
+}
+
+.pub-action-link[href]:hover {
+  border-color: #8c1515;
+  color: #8c1515;
+}
+
+.pub-action-link.is-placeholder {
+  color: #a0a0a0;
+  border-color: #eeeeee;
+  cursor: default;
+}
+
+.pub-action-icon {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
 }
 
 .pub-compact-item {
@@ -1404,7 +1446,7 @@ button {
     margin-top: 10px;
     width: 100%;
     aspect-ratio: 16 / 10;
-    max-width: 280px;
+    max-width: 360px;
   }
 
   .home-theme {
