@@ -592,6 +592,33 @@ button {
   line-height: 1.68;
 }
 
+.news-highlight {
+  color: #8c1515;
+  font-weight: 700;
+}
+
+.news-update-list {
+  padding-left: 18px;
+}
+
+.news-update-item {
+  margin: 0;
+  padding-left: 2px;
+}
+
+.news-update-item + .news-update-item {
+  margin-top: 10px;
+}
+
+.news-update-item::marker {
+  color: #8c1515;
+  font-size: 0.75em;
+}
+
+.news-paper-name {
+  font-weight: 700;
+}
+
 .awards-group {
   display: grid;
   grid-template-columns: 68px minmax(0, 1fr);
