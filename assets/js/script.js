@@ -400,5 +400,4 @@ document.addEventListener('visibilitychange', () => {
   syncPanelVideos(activeTab);
 });
 
-syncPublicationView();
 activateTab(window.location.hash.replace('#', '') || 'home', false);
