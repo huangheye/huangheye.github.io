@@ -178,103 +178,28 @@
         </div>
       </section>
 
-      <section class="intro-note">
-        <p class="intro-note-title">Prospective Students &amp; Collaborations</p>
-        <p>
-          I am interested in working with students and collaborators on safe
-          autonomy, generative AI, robotics, control, and intelligent mobility
-          systems. If your interests overlap with these areas, please feel free
-          to reach out by email.
-        </p>
-        <details class="prospective-form-card">
-          <summary>Prospective Student Inquiry Form</summary>
-          <p class="prospective-form-help">
-            Prospective PhD, master's, RA, and visiting students can use this
-            form to send a structured inquiry directly to the lab email.
-          </p>
-          <form
-            id="prospective-form"
-            class="prospective-form"
-            data-endpoint="https://script.google.com/macros/s/AKfycbyFmjiN8MA-ALZf5ONZzGeLx5Ek-nJtjSEDvPLAE8Hrg7H2CL_oTom4VQ9OxIRn8fK1/exec"
-            novalidate
-          >
-            <div class="prospective-form-grid">
-              <label class="prospective-field">
-                <span>Full Name *</span>
-                <input type="text" name="fullName" required />
-              </label>
-              <label class="prospective-field">
-                <span>Email *</span>
-                <input type="email" name="email" required />
-              </label>
-              <label class="prospective-field">
-                <span>Current Institution *</span>
-                <input type="text" name="currentInstitution" required />
-              </label>
-              <label class="prospective-field">
-                <span>Current Program / Year *</span>
-                <input type="text" name="currentProgram" required />
-              </label>
-              <label class="prospective-field">
-                <span>Interested Position *</span>
-                <select name="interestedRole" required>
-                  <option value="">Select</option>
-                  <option value="PhD">PhD</option>
-                  <option value="Master's">Master's</option>
-                  <option value="RA">RA</option>
-                  <option value="Visiting Student">Visiting Student</option>
-                  <option value="Collaboration">Collaboration</option>
-                </select>
-              </label>
-              <label class="prospective-field">
-                <span>Intended Start Term</span>
-                <input type="text" name="intendedStart" placeholder="e.g. Fall 2027" />
-              </label>
-              <label class="prospective-field prospective-field-wide">
-                <span>Research Interests *</span>
-                <textarea name="researchInterests" rows="3" required></textarea>
-              </label>
-              <label class="prospective-field prospective-field-wide">
-                <span>Why are you interested in this group? *</span>
-                <textarea name="motivation" rows="4" required></textarea>
-              </label>
-              <label class="prospective-field prospective-field-wide">
-                <span>CV (PDF, max 5 MB) *</span>
-                <input
-                  type="file"
-                  name="cvFile"
-                  accept=".pdf,application/pdf"
-                  required
-                />
-                <span class="prospective-field-note">
-                  Please upload a single PDF file no larger than 5 MB.
-                </span>
-              </label>
-              <label class="prospective-field prospective-field-wide">
-                <span>Representative Papers / Projects</span>
-                <textarea name="selectedWork" rows="2"></textarea>
-              </label>
-            </div>
-            <input
-              class="prospective-honeypot"
-              type="text"
-              name="website"
-              tabindex="-1"
-              autocomplete="off"
-            />
-            <div class="prospective-form-actions">
-              <button class="prospective-submit" type="submit">
-                Submit Inquiry
-              </button>
-              <p
-                class="prospective-status"
-                id="prospective-form-status"
-                role="status"
-                aria-live="polite"
-              ></p>
-            </div>
-          </form>
-        </details>
+      <section class="intro-note recruitment-teaser">
+        <div class="recruitment-teaser-copy">
+          <p class="intro-note-title">Open Positions</p>
+          <ul class="recruitment-opportunity-list">
+            <li>
+              <strong>PhD Students</strong>
+              <span>Fall 2027 admission</span>
+            </li>
+            <li>
+              <strong>Research Interns / RAs</strong>
+              <span>Remote or on-site</span>
+            </li>
+            <li><strong>Visiting Students / Research Collaborators</strong></li>
+            <li class="recruitment-csc-item">
+              <strong>CSC-supported PhD applicants are especially welcome</strong>
+            </li>
+          </ul>
+        </div>
+        <a class="recruitment-teaser-link" href="#join">
+          View research and contact details
+          <span aria-hidden="true">&rarr;</span>
+        </a>
       </section>
 
       <nav class="tab-nav" aria-label="Primary">
@@ -325,6 +250,18 @@
             tabindex="-1"
           >
             Service
+          </button>
+          <button
+            class="tab-button"
+            id="tab-join"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-join"
+            data-tab="join"
+            tabindex="-1"
+          >
+            Join Us
           </button>
         </div>
       </nav>
@@ -626,6 +563,270 @@
                 </li>
               </ul>
             </article>
+          </div>
+        </section>
+      </section>
+
+      <section
+        class="tab-panel"
+        id="panel-join"
+        role="tabpanel"
+        aria-labelledby="tab-join"
+        data-panel="join"
+        hidden
+      >
+        <section class="content-section join-hero">
+          <div class="join-hero-copy">
+            <p class="join-kicker">Join ACES Lab · KAIST</p>
+            <h2 class="join-title">Open Positions</h2>
+            <p class="join-lead">
+              We are recruiting students and welcoming collaborators interested
+              in foundation models for autonomous driving, world models,
+              embodied AI, and memory-augmented and self-evolving LLM agents.
+            </p>
+            <div class="join-hero-actions">
+              <a
+                class="join-primary-action"
+                href="mailto:heye.huang@kaist.ac.kr?subject=%5BInquiry%5D%20Name%20-%20Position%20-%20Institution"
+              >
+                Contact by email
+              </a>
+            </div>
+          </div>
+          <aside class="join-status-card" aria-label="Current openings">
+            <p class="join-status-label">Current openings</p>
+            <ul class="join-status-list">
+              <li><strong>PhD Students</strong> — Fall 2027 admission</li>
+              <li><strong>Research Interns / RAs</strong> — Remote or on-site</li>
+              <li><strong>Visiting Students / Research Collaborators</strong></li>
+              <li class="join-status-csc">
+                CSC-supported PhD applicants are especially welcome
+              </li>
+            </ul>
+            <p class="join-status-updated">Updated Sep. 2026</p>
+          </aside>
+        </section>
+
+        <section class="content-section join-section">
+          <div class="join-section-head">
+            <p class="join-section-kicker">Research questions</p>
+            <h2 class="join-section-title">
+              Start with a problem, not just a model
+            </h2>
+            <p class="join-section-intro">
+              These directions are broad themes rather than fixed project
+              assignments. Specific projects grow from concrete research
+              questions and each student&rsquo;s strengths.
+            </p>
+          </div>
+          <div class="join-direction-list">
+            <article class="join-direction-item">
+              <p class="join-direction-index">01</p>
+              <div>
+                <h3>Foundation models for autonomous driving</h3>
+                <p>
+                  How can foundation models enable robust perception, reasoning,
+                  and decision-making for autonomous driving in complex,
+                  open-world, and safety-critical environments?
+                </p>
+              </div>
+            </article>
+            <article class="join-direction-item">
+              <p class="join-direction-index">02</p>
+              <div>
+                <h3>World models as data engine</h3>
+                <p>
+                  How can world models generate diverse, realistic, and
+                  controllable scenarios for simulation, evaluation, and
+                  training in autonomous systems?
+                </p>
+              </div>
+            </article>
+            <article class="join-direction-item">
+              <p class="join-direction-index">03</p>
+              <div>
+                <h3>Embodied AI for autonomous and interactive systems</h3>
+                <p>
+                  How can embodied AI systems perceive, reason, and act
+                  effectively in dynamic real-world environments, especially
+                  for long-horizon tasks, interaction, and adaptation?
+                </p>
+              </div>
+            </article>
+            <article class="join-direction-item">
+              <p class="join-direction-index">04</p>
+              <div>
+                <h3>Memory-augmented and self-evolving LLM agents</h3>
+                <p>
+                  How can memory, continual learning, and self-improvement
+                  mechanisms help LLM agents adapt over time, accumulate
+                  knowledge, and become more reliable in long-horizon tasks?
+                </p>
+              </div>
+            </article>
+          </div>
+          <p class="join-research-link">
+            <a href="#publications">Explore the recent publications &rarr;</a>
+          </p>
+        </section>
+
+        <section class="content-section join-section">
+          <div class="join-section-head">
+            <p class="join-section-kicker">A candid note</p>
+            <h2 class="join-section-title">
+              Your first message does not need to be a finished proposal
+            </h2>
+          </div>
+          <div class="join-candid-card">
+            <p>
+              Across driving and robotics, the recurring question for us is not
+              simply whether a model can produce an action, but whether the
+              system can recognize when its assumptions are failing and adjust
+              safely.
+            </p>
+            <p>
+              Start with one problem you genuinely care about. Show us how you
+              have approached a difficult question before, what you contributed,
+              and what you would test next. A precise question is more useful
+              than a long list of AI keywords.
+            </p>
+            <p>
+              If one of our recent papers makes you curious—or if you think an
+              assumption or failure case is missing—tell us why. It is also fine
+              to be explicit about what you do not know yet and want to learn.
+            </p>
+          </div>
+        </section>
+
+        <section class="content-section join-section">
+          <div class="join-section-head">
+            <p class="join-section-kicker">Opportunities</p>
+            <h2 class="join-section-title">Ways to work with us</h2>
+          </div>
+          <div class="join-path-list">
+            <article class="join-path-item">
+              <div>
+                <p class="join-path-label">PhD students</p>
+                <p class="join-path-roles">Fall 2027 admission</p>
+              </div>
+              <p>
+                Tell us which research direction interests you, the question you
+                hope to investigate, and the experience that prepares you for
+                doctoral research. CSC-supported applicants are especially
+                welcome.
+              </p>
+            </article>
+            <article class="join-path-item">
+              <div>
+                <p class="join-path-label">
+                  Research interns and RAs
+                </p>
+                <p class="join-path-roles">Remote or on-site</p>
+              </div>
+              <p>
+                Include your proposed dates, weekly availability, relevant
+                technical skills, and a focused project or research question
+                that overlaps with the lab.
+              </p>
+            </article>
+            <article class="join-path-item">
+              <div>
+                <p class="join-path-label">
+                  Visiting students and research collaborators
+                </p>
+                <p class="join-path-roles">Project-based collaboration</p>
+              </div>
+              <p>
+                Describe the shared problem, the perspective or resources each
+                side can contribute, and a realistic first step for exploring
+                the collaboration.
+              </p>
+            </article>
+          </div>
+          <p class="join-admissions-note">
+            A lab inquiry does not replace the official KAIST admissions
+            process. Fall 2027 PhD applicants should also follow the applicable
+            KAIST application requirements and deadlines.
+          </p>
+        </section>
+
+        <section
+          class="content-section join-section join-application-section"
+          id="join-application"
+          tabindex="-1"
+        >
+          <div class="join-application-head">
+            <div>
+              <p class="join-section-kicker">Email application</p>
+              <h2 class="join-section-title">Contact ACES Lab</h2>
+            </div>
+            <p>
+              Send a short email with your CV, research interests, and intended
+              start date or availability.
+            </p>
+          </div>
+          <div class="join-email-grid">
+            <div class="join-email-contact">
+              <p class="join-email-label">Email</p>
+              <a class="join-email-address" href="mailto:heye.huang@kaist.ac.kr"
+                >heye.huang@kaist.ac.kr</a
+              >
+              <a
+                class="join-primary-action join-email-action"
+                href="mailto:heye.huang@kaist.ac.kr?subject=%5BInquiry%5D%20Name%20-%20Position%20-%20Institution"
+              >
+                Start an email
+              </a>
+            </div>
+            <div class="join-email-materials">
+              <p class="join-email-label">Suggested subject</p>
+              <code>[PhD Fall 2027] Name — Current Institution</code>
+              <p class="join-email-label join-email-include-label">Include</p>
+              <ul>
+                <li>Your CV</li>
+                <li>A brief note on your research interests</li>
+                <li>Your intended start date or availability</li>
+              </ul>
+            </div>
+          </div>
+          <p class="join-email-note">
+            For internships, RA positions, visits, or collaborations, use
+            <code>[Research Inquiry] Name — Position — Institution</code> and
+            include your proposed dates and availability.
+          </p>
+        </section>
+
+        <section class="content-section join-section join-faq-section">
+          <div class="join-section-head">
+            <p class="join-section-kicker">Before you apply</p>
+            <h2 class="join-section-title">Brief FAQ</h2>
+          </div>
+          <div class="join-faq-list">
+            <details>
+              <summary>Do I need an exact background match?</summary>
+              <p>
+                No. Relevant strengths may come from machine learning,
+                robotics, control, optimization, simulation, data systems, or
+                related fields. What matters is a clear research connection and
+                evidence that you can contribute to it.
+              </p>
+            </details>
+            <details>
+              <summary>Does sending an email guarantee a position?</summary>
+              <p>
+                No. Availability depends on research fit, timing, and the type
+                of opportunity. Degree admission decisions also follow KAIST&rsquo;s
+                official process.
+              </p>
+            </details>
+            <details>
+              <summary>What makes an inquiry useful?</summary>
+              <p>
+                A specific research question, a concise explanation of fit, and
+                direct links to representative work are more helpful than a
+                general message sent to many labs.
+              </p>
+            </details>
           </div>
         </section>
       </section>
@@ -1043,7 +1244,9 @@
 
         <section class="content-section pub-section-block">
           <div class="pub-section-head">
-            <h2 class="pub-section-title">Visiting Students &amp; Research Interns</h2>
+            <h2 class="pub-section-title">
+              Visiting Students, Research Interns &amp; RAs
+            </h2>
           </div>
           <div class="people-list">
             <article class="people-list-item">
@@ -1093,6 +1296,14 @@
                 <span class="people-list-program">MIT–UF–NEU Summer Camp</span>
               </p>
               <p class="people-list-status">Jun. 2026 - Oct. 2026</p>
+            </article>
+            <article class="people-list-item">
+              <p class="people-list-name">Jaein Reuw</p>
+              <p class="people-list-meta">
+                Purdue University · Bachelor's Student
+                <span class="people-list-program">Research Assistant</span>
+              </p>
+              <p class="people-list-status">Jul. 2026 - Sep. 2026</p>
             </article>
             <article class="people-list-item">
               <p class="people-list-name">Jingtao Shen</p>

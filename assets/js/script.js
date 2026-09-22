@@ -6,53 +6,6 @@ const publicationItems = Array.from(
   document.querySelectorAll('#panel-publications .pub-list .pub-entry')
 );
 const placeholderLinks = Array.from(document.querySelectorAll('[data-placeholder-link]'));
-const prospectiveForm = document.querySelector('#prospective-form');
-const prospectiveFormStatus = document.querySelector('#prospective-form-status');
-const prospectiveSubmitButton = prospectiveForm?.querySelector('button[type="submit"]');
-const MAX_CV_FILE_SIZE_BYTES = 5 * 1024 * 1024;
-
-function isPdfFile(file) {
-  if (!(file instanceof File)) {
-    return false;
-  }
-
-  const mime = String(file.type || '').toLowerCase();
-  const name = String(file.name || '').toLowerCase();
-  return mime === 'application/pdf' || name.endsWith('.pdf');
-}
-
-function readFileAsBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      const result = String(reader.result || '');
-      const base64 = result.includes(',') ? result.split(',')[1] : '';
-
-      if (!base64) {
-        reject(new Error('Failed to encode file.'));
-        return;
-      }
-
-      resolve(base64);
-    };
-
-    reader.onerror = () => {
-      reject(new Error('Failed to read file.'));
-    };
-
-    reader.readAsDataURL(file);
-  });
-}
-
-function setProspectiveFormStatus(message, state = '') {
-  if (!prospectiveFormStatus) {
-    return;
-  }
-
-  prospectiveFormStatus.textContent = message;
-  prospectiveFormStatus.dataset.state = state;
-}
 
 function createPublicationActionLink(item, type) {
   const config = {
@@ -136,105 +89,6 @@ function renderPublicationLinks() {
 
     linkHost.append(links);
   });
-}
-
-async function submitProspectiveForm(event) {
-  event.preventDefault();
-
-  if (!prospectiveForm) {
-    return;
-  }
-
-  if (!prospectiveForm.reportValidity()) {
-    return;
-  }
-
-  const endpoint = prospectiveForm.dataset.endpoint?.trim() || '';
-
-  if (!endpoint) {
-    setProspectiveFormStatus(
-      'Form backend is not configured yet. Add the deployed Google Apps Script URL to the form data-endpoint attribute in index.html.',
-      'error'
-    );
-    return;
-  }
-
-  const formData = new FormData(prospectiveForm);
-  const honeypot = String(formData.get('website') || '').trim();
-  const cvFile = formData.get('cvFile');
-
-  if (honeypot) {
-    prospectiveForm.reset();
-    setProspectiveFormStatus('Submitted successfully.', 'success');
-    return;
-  }
-
-  if (!(cvFile instanceof File) || !cvFile.size) {
-    setProspectiveFormStatus('Please upload your CV as a PDF file.', 'error');
-    return;
-  }
-
-  if (!isPdfFile(cvFile)) {
-    setProspectiveFormStatus('Please upload a PDF file for the CV.', 'error');
-    return;
-  }
-
-  if (cvFile.size > MAX_CV_FILE_SIZE_BYTES) {
-    setProspectiveFormStatus('The CV must be a PDF no larger than 5 MB.', 'error');
-    return;
-  }
-
-  const payload = {
-    submittedAt: new Date().toISOString(),
-    pageUrl: window.location.href,
-  };
-
-  for (const [key, value] of formData.entries()) {
-    if (key === 'website' || key === 'cvFile') {
-      continue;
-    }
-
-    const normalizedValue = String(value).trim();
-
-    if (!normalizedValue) {
-      continue;
-    }
-
-    payload[key] = normalizedValue;
-  }
-
-  if (prospectiveSubmitButton instanceof HTMLButtonElement) {
-    prospectiveSubmitButton.disabled = true;
-  }
-
-  setProspectiveFormStatus('Submitting inquiry...', '');
-
-  try {
-    payload.cvFilename = cvFile.name;
-    payload.cvMimeType = cvFile.type || 'application/pdf';
-    payload.cvBase64 = await readFileAsBase64(cvFile);
-
-    await fetch(endpoint, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8',
-      },
-      body: JSON.stringify(payload),
-    });
-
-    prospectiveForm.reset();
-    setProspectiveFormStatus('Inquiry submitted successfully.', 'success');
-  } catch (_) {
-    setProspectiveFormStatus(
-      'Submission failed. Please try again, or contact the lab directly by email.',
-      'error'
-    );
-  } finally {
-    if (prospectiveSubmitButton instanceof HTMLButtonElement) {
-      prospectiveSubmitButton.disabled = false;
-    }
-  }
 }
 
 function getVideoStart(video) {
@@ -341,10 +195,6 @@ placeholderLinks.forEach((link) => {
 });
 
 renderPublicationLinks();
-
-if (prospectiveForm) {
-  prospectiveForm.addEventListener('submit', submitProspectiveForm);
-}
 
 function activateTab(tabName, updateHash = true) {
   if (!validTabs.has(tabName)) {
