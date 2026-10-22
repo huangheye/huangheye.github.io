@@ -1778,12 +1778,22 @@ button {
   color: #444444;
 }
 
-.service-meta {
+.service-meta,
+.service-meta-list {
   margin: 0;
   color: #626262;
   font-size: 13.5px;
   line-height: 1.68;
   max-width: 72ch;
+}
+
+.service-meta-list {
+  padding: 0;
+  list-style: none;
+}
+
+.service-meta-list li + li {
+  margin-top: 2px;
 }
 
 .talk-item {
