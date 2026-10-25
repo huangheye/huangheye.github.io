@@ -225,7 +225,7 @@
             data-tab="group"
             tabindex="-1"
           >
-            Group
+            People
           </button>
           <button
             class="tab-button"
@@ -262,6 +262,18 @@
             tabindex="-1"
           >
             Join Us
+          </button>
+          <button
+            class="tab-button"
+            id="tab-lab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-lab"
+            data-tab="lab"
+            tabindex="-1"
+          >
+            Lab
           </button>
         </div>
       </nav>
@@ -2172,6 +2184,231 @@
                 AAMAS.
               </p>
             </article>
+          </div>
+        </section>
+      </section>
+
+      <section
+        class="tab-panel"
+        id="panel-lab"
+        role="tabpanel"
+        aria-labelledby="tab-lab"
+        data-panel="lab"
+        hidden
+      >
+        <section class="content-section lab-overview">
+          <p class="lab-overview-kicker">Inside ACES Lab</p>
+          <p class="lab-overview-title">Research platforms and lab life</p>
+          <p class="lab-overview-copy">
+            Experimental systems that connect learning, perception, reasoning,
+            and control in the physical world.
+          </p>
+        </section>
+
+        <section
+          class="content-section pub-section-block lab-hardware-section"
+          aria-labelledby="hardware-title"
+        >
+          <div class="pub-section-head">
+            <h2 class="pub-section-title" id="hardware-title">Hardware</h2>
+            <p class="pub-section-note">
+              Platforms for robotics, autonomous driving, and human-in-the-loop
+              experiments.
+            </p>
+          </div>
+
+          <div class="hardware-list">
+            <article class="hardware-item">
+              <p class="hardware-index" aria-hidden="true">01</p>
+              <figure class="hardware-media">
+                <img
+                  src="assets/images/hardware/unitree-g1.webp"
+                  alt="Unitree G1 humanoid robot outdoors"
+                  width="1206"
+                  height="807"
+                  decoding="async"
+                />
+              </figure>
+              <div class="hardware-copy">
+                <p class="hardware-category">Humanoid robotics</p>
+                <h3>Unitree G1 Humanoid</h3>
+                <p>
+                  A whole-body platform for studying balance, locomotion, and
+                  coordinated motion through imitation and reinforcement
+                  learning under physical constraints.
+                </p>
+              </div>
+            </article>
+
+            <article class="hardware-item">
+              <p class="hardware-index" aria-hidden="true">02</p>
+              <figure class="hardware-media hardware-media--go2">
+                <img
+                  src="assets/images/hardware/unitree-go2.webp"
+                  alt="Unitree Go2 quadruped robot outdoors"
+                  width="1200"
+                  height="1600"
+                  decoding="async"
+                />
+              </figure>
+              <div class="hardware-copy">
+                <p class="hardware-category">Legged robotics</p>
+                <h3>Unitree Go2 Quadruped</h3>
+                <p>
+                  A mobile testbed for learned locomotion, navigation, balance,
+                  and obstacle avoidance over uneven and changing terrain.
+                </p>
+              </div>
+            </article>
+
+            <article class="hardware-item">
+              <p class="hardware-index" aria-hidden="true">03</p>
+              <figure class="hardware-media">
+                <img
+                  src="assets/images/hardware/autonomous-vehicle.webp"
+                  alt="White autonomous vehicle with roof-mounted sensors"
+                  width="1410"
+                  height="918"
+                  decoding="async"
+                />
+              </figure>
+              <div class="hardware-copy">
+                <p class="hardware-category">Autonomous driving</p>
+                <h3>Autonomous Vehicle</h3>
+                <p>
+                  An integrated platform for sensing, prediction, planning, and
+                  control, with an emphasis on safe behavior under uncertainty
+                  and incomplete observations.
+                </p>
+              </div>
+            </article>
+
+            <article class="hardware-item">
+              <p class="hardware-index" aria-hidden="true">04</p>
+              <figure class="hardware-media">
+                <img
+                  src="assets/images/hardware/driving-simulator.webp"
+                  alt="Driving simulator with cockpit controls and a wide display"
+                  width="1440"
+                  height="988"
+                  decoding="async"
+                />
+              </figure>
+              <div class="hardware-copy">
+                <p class="hardware-category">Driving simulation</p>
+                <h3>Driving Simulator</h3>
+                <p>
+                  A controlled environment for investigating driving behavior,
+                  risk perception, decision-making, and human&ndash;automation
+                  interaction without real-world traffic exposure.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="content-section pub-section-block lab-gallery-section"
+          aria-labelledby="gallery-title"
+        >
+          <div class="pub-section-head">
+            <h2 class="pub-section-title" id="gallery-title">Gallery</h2>
+            <p class="pub-section-note">
+              Selected moments from research, conferences, and life together
+              at ACES Lab.
+            </p>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="gallery-item gallery-item--featured">
+              <img
+                src="assets/images/gallery/nature-autonomous-robotics-2026.webp"
+                alt="ACES Lab members at the Nature Conference on Autonomous Robotics"
+                width="1600"
+                height="1273"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span class="gallery-caption-title">Nature Conference: Autonomous Robotics</span>
+                <span class="gallery-caption-date">Oct. 2026</span>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img
+                src="assets/images/gallery/lab-milestone-september-2026.webp"
+                alt="ACES Lab members marking a shared milestone"
+                width="1600"
+                height="1054"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span class="gallery-caption-title">A shared milestone</span>
+                <span class="gallery-caption-date">Sep. 2026</span>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img
+                src="assets/images/gallery/aces-members-message-2026.webp"
+                alt="A framed group photograph and handwritten message from ACES Lab members"
+                width="1600"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span class="gallery-caption-title">A message from ACES members</span>
+                <span class="gallery-caption-date">Sep. 2026</span>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img
+                src="assets/images/gallery/lab-celebration-august-2026.webp"
+                alt="ACES Lab members celebrating together with a cake"
+                width="1600"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span class="gallery-caption-title">Celebrating together</span>
+                <span class="gallery-caption-date">Aug. 2026</span>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img
+                src="assets/images/gallery/community-gathering-september-2026.webp"
+                alt="Colleagues gathered for a community celebration"
+                width="1600"
+                height="1205"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span class="gallery-caption-title">Community gathering</span>
+                <span class="gallery-caption-date">Sep. 2026</span>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <img
+                src="assets/images/gallery/team-dinner-october-2026.webp"
+                alt="ACES Lab members sharing a team dinner"
+                width="1600"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span class="gallery-caption-title">Team dinner</span>
+                <span class="gallery-caption-date">Oct. 2026</span>
+              </figcaption>
+            </figure>
           </div>
         </section>
       </section>
