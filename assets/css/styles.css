@@ -1494,6 +1494,10 @@ button {
   margin: 12px 0 0;
 }
 
+.people-card--row .people-links--five {
+  gap: 4px;
+}
+
 .people-card--row .people-icon-link {
   width: 32px;
   height: 32px;
